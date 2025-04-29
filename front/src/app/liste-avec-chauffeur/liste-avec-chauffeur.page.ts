@@ -42,7 +42,10 @@ export class ListeAvecChauffeurPage implements OnInit {
     }
 
     console.log("Véhicule sélectionné :", this.vehiculeSelectionne);
-    alert(`Vous avez sélectionné le véhicule : ${this.vehiculeSelectionne.libelle}`);
+    this.router.navigate(['/choix-dates'], {
+      state: { vehicule: this.vehiculeSelectionne }
+    });
+    
     
     // Ici, on pourrait router vers une autre page ou sauvegarder la sélection
     // this.router.navigate(['/resume'], { state: { vehicule: this.vehiculeSelectionne } });

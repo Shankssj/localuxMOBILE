@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'connexion',
     loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
+  },  {
+    path: 'choix-dates',
+    loadChildren: () => import('./choix-dates/choix-dates.module').then( m => m.ChoixDatesPageModule)
   },
+
 ];
 
 @NgModule({
