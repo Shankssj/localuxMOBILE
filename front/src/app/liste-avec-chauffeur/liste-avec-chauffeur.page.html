@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sélection du Véhicule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="luxury-content">
+  <div class="page-content">
+    <h2 class="page-title">Choisissez votre véhicule</h2>
+
+    <ion-card *ngFor="let vehicule of vehicules" (click)="selectionnerVehicule(vehicule)"
+              [class.selected]="vehiculeSelectionne?.id === vehicule.id">
+      <ion-img [src]="vehicule.image || './assets/icon/mclaren.jpg'" class="vehicule-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ vehicule.libelle }}</ion-card-title>
+        
+   
+      </ion-card-header>
+    </ion-card>
+
+    <ion-button expand="block" color="danger" (click)="validerSelection()">
+      Valider
+    </ion-button>
+  </div>
+</ion-content>
+
+<style>
+.page-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #D7263D;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 16px;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+
+ion-card.selected {
+  border: 2px solid #D7263D;
+  transform: scale(1.02);
+}
+
+.vehicule-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+</style>

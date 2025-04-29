@@ -1,0 +1,66 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-container">
+    <h2 class="login-title">Bienvenue</h2>
+    <p class="login-subtitle">Connectez-vous pour continuer</p>
+
+    <form (submit)="onLogin()">
+      <!-- Champ Email -->
+      <ion-item>
+        <ion-label position="floating">Identifiant</ion-label>
+        <ion-input type="text" [(ngModel)]="login" name="identifiant" required></ion-input>
+      </ion-item>
+
+      <!-- Champ Mot de Passe -->
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password" [(ngModel)]="pwd" name="password" required></ion-input>
+      </ion-item>
+      
+
+      <!-- Bouton Connexion -->
+      <ion-button expand="block" type="submit" color="primary" class="ion-margin-top">
+        Se connecter
+      </ion-button>
+    </form>
+  </div>
+  <div class="register-link ion-text-center ion-margin-top">
+    <!-- <p>Pas encore de compte ? <a (click)="goToRegister()">Inscrivez-vous ici</a></p> -->
+  </div>
+
+</ion-content>
+
+<style>
+  .login-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .login-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .login-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .forgot-password a {
+    font-size: 14px;
+    color: #3880ff;
+    text-decoration: none;
+  }
+</style>

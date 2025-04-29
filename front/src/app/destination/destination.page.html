@@ -1,0 +1,41 @@
+<ion-header translucent="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sélection de destination</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-content">
+    <h2 class="page-title">Choisissez une destination avec chauffeur</h2>
+
+    <ion-item>
+      <ion-label>Destination</ion-label>
+      <ion-select placeholder="Sélectionner" (ionChange)="onFormuleSelectionnee($event.detail.value)">
+        <ion-select-option *ngFor="let formule of formulesAvecChauffeur" [value]="formule.destination">
+          {{ formule.destination }} - {{ formule.tarif }} €
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" color="danger" [disabled]="!destination" (click)="allerAuxVehicules()">
+      Suivant
+    </ion-button>
+  </div>
+</ion-content>
+
+
+<style>
+.page-content {
+  padding: 16px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #D7263D;
+}
+</style>

@@ -1,0 +1,7 @@
+{
+  "name": "localuxcp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

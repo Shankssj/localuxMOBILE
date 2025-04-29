@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="form-content">
+  <form (ngSubmit)="inscription()" #form="ngForm" class="reservation-form">
+
+    <h2 class="form-title">Créer un compte</h2>
+
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input name="nom" [(ngModel)]="nom" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input name="prenom" [(ngModel)]="prenom" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Téléphone</ion-label>
+      <ion-input name="tel" [(ngModel)]="tel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Rue</ion-label>
+      <ion-input name="rue" [(ngModel)]="rue" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="business-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Ville</ion-label>
+      <ion-input name="ville" [(ngModel)]="ville" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail-open-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Code Postal</ion-label>
+      <ion-input name="cp" [(ngModel)]="cp" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input name="login" [(ngModel)]="login" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" name="mdp" [(ngModel)]="mdp" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="reserver-btn" color="danger" type="submit" [disabled]="form.invalid">
+      <ion-icon name="person-add-outline" slot="start"></ion-icon>
+      S'inscrire
+    </ion-button>
+  </form>
+</ion-content>
