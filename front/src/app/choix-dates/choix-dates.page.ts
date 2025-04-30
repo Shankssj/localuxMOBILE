@@ -54,5 +54,4 @@ export class ChoixDatesPage implements OnInit {
       }
     );
   }
-  
 }
